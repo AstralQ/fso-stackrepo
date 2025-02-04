@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 3002;
 // ✅ Middleware Setup
 app.use(express.json()); 
 app.use(cors());
-app.use(morgan('tiny'))
+app.use(express.static("dist"));
+app.use(morgan('tiny'));
 
 // ✅ Custom Morgan Tokens
 morgan.token('req-body', (req) => {
